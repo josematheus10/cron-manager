@@ -23,7 +23,8 @@ class TasksController extends CI_Controller
         $this->load->model('Task', 'task');
         $this->load->model('TaskRun', 'task_run');
         $this->load->helper('url');
-        $this->controller_folder = __DIR__ . '/../models';
+        $this->load->helper('path');
+        $this->controller_folder =  set_realpath(FCPATH . 'application/models');
 
         TaskLoader::setClassFolder($this->controller_folder);
     }
